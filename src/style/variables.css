@@ -1,0 +1,21 @@
+/* variables.css */
+
+/* Color Palette */
+:root {
+  --background: 0, 0%, 0%;
+  --foreground: 100, 100%, 100%;
+  --primary: 240, 100%, 50%;
+  --secondary: 220, 20%, 40%;
+  --accent: 330, 100%, 60%;
+  --muted: 0, 0%, 50%;
+  --destructive: 360, 100%, 50%;
+  --border: 0, 0%, 30%;
+  --input: 0, 0%, 80%;
+  --ring: 220, 20%, 40%;
+  --chart-1: 340, 100%, 40%;
+  --chart-2: 120, 100%, 40%;
+  --chart-3: 60, 100%, 40%;
+  --chart-4: 180, 100%, 40%;
+  --chart-5: 0, 0%, 30%;
+  --radius: 0.5rem;
+}

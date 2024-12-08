@@ -1,0 +1,20 @@
+/* components.css */
+
+/* Button Styles */
+button {
+  @apply py-2 px-4 rounded-lg text-white bg-primary hover:bg-accent transition-all;
+}
+
+/* Disabled Button */
+button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Button Variants (outline, ghost, etc.) */
+button.outline {
+  @apply border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all;
+}
+
+button.ghost {
+  @apply text-primary hover:bg-primary hover:text-white transition-all;
+}
