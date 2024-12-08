@@ -2,23 +2,20 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  Bot,
   Menu,
   X,
   BarChart3,
   Calendar,
   MessageSquare,
-  Settings,
   Users,
   Video,
   BookOpen,
-  Lightbulb,
-  Rocket,
   Heart,
   HelpCircle,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/assets/Logo";
 
 const features = [
   {
@@ -126,9 +123,9 @@ export function Navbar() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="flex items-center gap-2">
-              <Bot className="h-8 w-8 text-purple-500" />
+              <Logo className="h-10 w-10" />
               <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-xl font-bold text-transparent">
-              Luminoo
+                Luminoo
               </span>
             </span>
           </Link>
@@ -209,9 +206,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-          <Button
-            className="text-sm font-semibold leading-6 text-white"
-          >
+          <Button className="text-sm font-semibold leading-6 text-white">
             Log in
           </Button>
           <Button className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-sm font-semibold text-white transition-all hover:from-purple-600 hover:via-pink-600 hover:to-blue-600">

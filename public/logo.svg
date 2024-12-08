@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Main circular frame -->
+  <circle cx="100" cy="100" r="90" fill="url(#gradientBg)" />
+  
+  <!-- Abstract network pattern -->
+  <path d="M60 100 Q100 40 140 100 Q100 160 60 100" 
+        stroke="#fff" fill="none" stroke-width="6" />
+  <path d="M100 60 Q160 100 100 140 Q40 100 100 60" 
+        stroke="#fff" fill="none" stroke-width="6" />
+        
+  <!-- Center dot -->
+  <circle cx="100" cy="100" r="15" fill="#ffffff" />
+  
+  <!-- Connection points -->
+  <circle cx="60" cy="100" r="8" fill="#ffffff" />
+  <circle cx="140" cy="100" r="8" fill="#ffffff" />
+  <circle cx="100" cy="60" r="8" fill="#ffffff" />
+  <circle cx="100" cy="140" r="8" fill="#ffffff" />
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradientBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+  </defs>
+</svg>
