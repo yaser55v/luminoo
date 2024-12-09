@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -27,6 +29,7 @@ const formSchema = z.object({
 
 export function EmailSignupForm() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -42,9 +45,15 @@ export function EmailSignupForm() {
     setIsLoading(true);
     try {
       await signUpWithEmail(values.email, values.password);
+      toast.success(t('auth.signupSuccess'), {
+        description: t('auth.verifyEmailPrompt'),
+      });
+      navigate('/');
     } catch (error) {
-      console.error(error);
-      // Handle error appropriately
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(t('auth.signupError'), {
+        description: errorMessage,
+      });
     } finally {
       setIsLoading(false);
     }

@@ -23,6 +23,12 @@
     "createAccount": "Create an account",
     "signupDescription": "Join Luminoo to start creating amazing content",
     "alreadyHaveAccount": "Already have an account?",
-    "dontHaveAccount": "Don't have an account?"
+    "dontHaveAccount": "Don't have an account?",
+    "loginSuccess": "Login successful",
+    "loginError": "Login failed",
+    "signupSuccess": "Account created successfully",
+    "signupError": "Registration failed",
+    "socialAuthError": "Social authentication failed",
+    "verifyEmailPrompt": "Please check your email to verify your account"
   }
 }

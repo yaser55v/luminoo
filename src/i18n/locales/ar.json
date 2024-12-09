@@ -23,6 +23,12 @@
     "createAccount": "إنشاء حساب جديد",
     "signupDescription": "انضم إلى Luminoo لبدء إنشاء محتوى مميز",
     "alreadyHaveAccount": "لديك حساب بالفعل؟",
-    "dontHaveAccount": "ليس لديك حساب؟"
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "loginError": "فشل تسجيل الدخول",
+    "signupSuccess": "تم إنشاء الحساب بنجاح",
+    "signupError": "فشل التسجيل",
+    "socialAuthError": "فشل المصادقة الاجتماعية",
+    "verifyEmailPrompt": "يرجى التحقق من بريدك الإلكتروني لتأكيد حسابك"
   }
 }

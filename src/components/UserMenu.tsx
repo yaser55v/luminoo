@@ -25,7 +25,7 @@ export function UserMenu() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="outline-none">
+      <DropdownMenuTrigger className="outline-0 bg-inherit p-0">
         <Avatar>
           <AvatarImage src={user.photoURL || undefined} />
           <AvatarFallback>{initials}</AvatarFallback>
