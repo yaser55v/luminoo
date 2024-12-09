@@ -6,7 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signOut as firebaseSignOut
 } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth } from '@/lib/firebase';
 import { store } from '@/store';
 import { setUser, logout } from '@/store/slices/authSlice';
 
