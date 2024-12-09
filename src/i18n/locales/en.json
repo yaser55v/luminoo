@@ -1,0 +1,28 @@
+{
+  "common": {
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "getStarted": "Get Started",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "or": "or",
+    "continueWith": "Continue with {{provider}}"
+  },
+  "nav": {
+    "features": "Features",
+    "resources": "Resources",
+    "pricing": "Pricing",
+    "blog": "Blog"
+  },
+  "auth": {
+    "welcomeBack": "Welcome back",
+    "loginDescription": "Sign in to your account to continue",
+    "createAccount": "Create an account",
+    "signupDescription": "Join Luminoo to start creating amazing content",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?"
+  }
+}

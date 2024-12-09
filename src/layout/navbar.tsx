@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import {
   Menu,
   X,
@@ -12,10 +14,14 @@ import {
   BookOpen,
   Heart,
   HelpCircle,
+  Languages,
 } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { RootState } from "@/store";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/assets/Logo";
+import { UserMenu } from "@/components/UserMenu";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const features = [
   {
@@ -84,6 +90,10 @@ export function Navbar() {
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const { scrollY } = useScroll();
   const timeoutRef = useRef<NodeJS.Timeout>();
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const { direction } = useSelector((state: RootState) => state.language);
+  const user = useSelector((state: RootState) => state.auth.user);
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
@@ -118,6 +128,7 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
+      dir={direction}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
@@ -156,7 +167,7 @@ export function Navbar() {
                 href={item.href}
                 className="text-sm font-semibold leading-6 text-white transition-colors hover:text-purple-400"
               >
-                {item.name}
+                {t(`nav.${item.name.toLowerCase()}`)}
               </a>
               {/* Mega Menu */}
               <AnimatePresence>
@@ -206,12 +217,26 @@ export function Navbar() {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-          <Button className="text-sm font-semibold leading-6 text-white">
-            Log in
-          </Button>
-          <Button className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-sm font-semibold text-white transition-all hover:from-purple-600 hover:via-pink-600 hover:to-blue-600">
-            Get Started
-          </Button>
+          <LanguageSelector />
+          {user ? (
+            <UserMenu />
+          ) : (
+            <>
+              <Button
+                variant="ghost"
+                onClick={() => navigate("/login")}
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                {t("common.login")}
+              </Button>
+              <Button
+                onClick={() => navigate("/signup")}
+                className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-sm font-semibold text-white transition-all hover:from-purple-600 hover:via-pink-600 hover:to-blue-600"
+              >
+                {t("common.getStarted")}
+              </Button>
+            </>
+          )}
         </div>
       </nav>
 
@@ -237,7 +262,7 @@ export function Navbar() {
                       );
                     }}
                   >
-                    {item.name}
+                    {t(`nav.${item.name.toLowerCase()}`)}
                   </Button>
                   {activeMegaMenu === item.name &&
                     item.megaMenu?.map((subItem) => (
@@ -254,15 +279,26 @@ export function Navbar() {
                 </div>
               ))}
               <div className="mt-8 space-y-2">
-                <Button
-                  variant="ghost"
-                  className="w-full justify-start text-left text-base font-semibold text-white"
-                >
-                  Log in
-                </Button>
-                <Button className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-base font-semibold text-white transition-all hover:from-purple-600 hover:via-pink-600 hover:to-blue-600">
-                  Get Started
-                </Button>
+                <LanguageSelector />
+                {user ? (
+                  <UserMenu />
+                ) : (
+                  <>
+                    <Button
+                      variant="ghost"
+                      onClick={() => navigate("/login")}
+                      className="w-full justify-start text-left text-base font-semibold text-white"
+                    >
+                      {t("common.login")}
+                    </Button>
+                    <Button
+                      onClick={() => navigate("/signup")}
+                      className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-base font-semibold text-white transition-all hover:from-purple-600 hover:via-pink-600 hover:to-blue-600"
+                    >
+                      {t("common.getStarted")}
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           </motion.div>

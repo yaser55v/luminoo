@@ -1,0 +1,28 @@
+{
+  "common": {
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "getStarted": "ابدأ الآن",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "or": "أو",
+    "continueWith": "المتابعة باستخدام {{provider}}"
+  },
+  "nav": {
+    "features": "المميزات",
+    "resources": "الموارد",
+    "pricing": "الأسعار",
+    "blog": "المدونة"
+  },
+  "auth": {
+    "welcomeBack": "مرحباً بعودتك",
+    "loginDescription": "سجل دخولك للمتابعة",
+    "createAccount": "إنشاء حساب جديد",
+    "signupDescription": "انضم إلى Luminoo لبدء إنشاء محتوى مميز",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "dontHaveAccount": "ليس لديك حساب؟"
+  }
+}
